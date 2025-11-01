@@ -93,7 +93,7 @@ export async function GET(request: NextRequest) {
     {
       headers: {
         "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=3600",
+        "Cache-Control": "public, max-age=60, stale-while-revalidate=30",
       },
     }
   );
