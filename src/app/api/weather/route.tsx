@@ -10,11 +10,11 @@ import { validateViewBox } from "@/app/utils/validate-view-box";
 
 export async function GET(request: NextRequest) {
   const queryParams = request.nextUrl.searchParams;
-  const viewBox =
-    validateViewBox(getQueryParam(request.nextUrl.searchParams, "viewBox")) ||
-    "0 0 130 130";
+  const viewBox = validateViewBox(
+    getQueryParam(request.nextUrl.searchParams, "viewBox")
+  );
   const units =
-    (queryParams.get("units") as WeatherUnits)?.toLowerCase() || "imperial";
+    (queryParams.get("units") as WeatherUnits)?.toLowerCase() || "standard";
 
   const openWeatherUrl = new URL(
     "https://api.openweathermap.org/data/2.5/weather"
