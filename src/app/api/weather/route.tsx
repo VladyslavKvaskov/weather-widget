@@ -67,10 +67,9 @@ export async function GET(request: NextRequest) {
     }" fill="url(#bgGradient)" rx="16" ry="16" />
         <text x="16" y="23" font-size="16" fill="${textColor}" text-anchor="start" font-family="Arial, sans-serif">
         ${truncateWithEllipsis(
-          data.name,
+          `${data.name}, ${data.sys.country}`,
           Math.floor(Number(viewBox.split(" ")[2]) / 10) - 1
         )}
-        <title>${data.name}, ${data.sys.country}</title>
         </text>
         <text x="16" y="56" font-size="26" fill="${textColor}" text-anchor="start" font-family="Arial, sans-serif">
           ${Math.round(data.main.temp)}${
