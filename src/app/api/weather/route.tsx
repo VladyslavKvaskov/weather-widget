@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
   const description = capitalizeWords(data.weather[0].description || "");
 
   return new Response(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" height="130">
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}">
         <defs>
           <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="${isNight ? "#000621" : "#134282"}" />
